@@ -1,6 +1,11 @@
 package hiber.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
+import javax.persistence.OneToOne;
 import java.io.Serializable;
 
 @Entity
@@ -13,10 +18,10 @@ public class Car implements Serializable {
     private User user;
 
     @Column
-    String model;
+    private String model;
 
     @Column
-    int series;
+    private int series;
 
     public Car() {
     }
@@ -54,7 +59,6 @@ public class Car implements Serializable {
     @Override
     public String toString() {
         return "Car{" +
-                "user=" + user +
                 ", model='" + model + '\'' +
                 ", series=" + series +
                 '}';
